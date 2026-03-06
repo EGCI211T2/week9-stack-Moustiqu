@@ -28,7 +28,7 @@ void Stack::push(char x){
 char Stack::pop(){
         NodePtr t=top;
         if (top==NULL)
-            return NULL;
+            return '\0';
 
         char value;
         value=t->get_value();
@@ -46,7 +46,8 @@ Stack::Stack(){
     
 }
 Stack::~Stack(){
-    for (int i =0; i<size; i++)
+	int n=size; // I added this ***
+    for (int i =0; i<n; i++)
     {
         this->pop();
     }
